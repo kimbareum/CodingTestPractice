@@ -1,2 +1,2 @@
 def solution(numbers):
-    return 45-sum(numbers)
+    return sum(range(10))-sum(numbers)
