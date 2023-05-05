@@ -1,5 +1,3 @@
-from collections import deque
-
 def solution(k, score):
     if len(score) <= k:
         return [min(score[0:i+1]) for i in range(len(score))]
