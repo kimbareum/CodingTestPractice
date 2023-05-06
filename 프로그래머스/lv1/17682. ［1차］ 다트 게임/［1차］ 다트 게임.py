@@ -27,3 +27,10 @@ def solution(dart_result):
                     dart_score[i-1] *= 2
                 dart_score[i] *= 2    
     return(sum(dart_score))
+
+
+# p = re.compile('(\d+)([SDT])([*#]?)')
+# dart = p.findall(dartResult)
+# 정규표현식으로 구성한 compile과 findall 조합하면
+# [('1', 'S', '*'), ('2', 'T', '*'), ('3', 'S', '')]
+# 이런 형태로 만들어 줌.
