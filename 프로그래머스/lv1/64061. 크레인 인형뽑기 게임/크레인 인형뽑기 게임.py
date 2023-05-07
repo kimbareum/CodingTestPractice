@@ -9,6 +9,7 @@ def solution(board, moves):
             if k != 0:
                 temp.append(k)
         col.append(temp)
+    # col = list(map(lambda x: list(filter(lambda y: y > 0, x)), zip(*board)))
     for i in moves:
         if len(col[i-1]) != 0:
             move = col[i-1].pop()
