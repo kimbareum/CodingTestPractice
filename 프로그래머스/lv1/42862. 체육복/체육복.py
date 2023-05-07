@@ -2,8 +2,6 @@ def solution(n, lost, reserve):
     reserve = set(reserve)
     lost = set(lost)
     lost, reserve = lost - reserve, reserve - lost
-    if len(lost) == 0:
-        return n
     reserved = []
     answer = n-len(lost)
     for i in lost:
