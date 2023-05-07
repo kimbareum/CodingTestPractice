@@ -4,8 +4,9 @@ def solution(babbling):
     answer = 0
     for i in range(len(babbling)):
         for j, k in zip(canSay, cantSay) :
-            if k not in babbling[i]:
-                babbling[i] = babbling[i].replace(j," ")
+            if k in babbling[i]:
+                break
+            babbling[i] = babbling[i].replace(j," ")
         if not babbling[i].strip() :
             answer +=1
     return answer
