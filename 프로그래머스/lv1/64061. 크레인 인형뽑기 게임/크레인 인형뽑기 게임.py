@@ -1,7 +1,7 @@
 def solution(board, moves):
     answer = 0
     col = []
-    basket = []
+    basket = [0]
     for i in range(len(board[0])):
         temp = []
         for j in range(len(board)-1,-1,-1):
@@ -12,7 +12,7 @@ def solution(board, moves):
     for i in moves:
         if len(col[i-1]) != 0:
             move = col[i-1].pop()
-            if basket != [] and basket[-1] == move:
+            if basket[-1] == move:
                 basket.pop()
                 answer += 2
             else:
