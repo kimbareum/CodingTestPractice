@@ -1,8 +1,9 @@
 def solution(wallpaper):
-    answer = [50, 50, 0, 0]
-    for yi, y in enumerate(wallpaper):
-        for xi, x in enumerate(y):
-            if x == '#':
-                answer = [min(answer[0], yi), min(answer[1], xi),
-                        max(answer[2], (yi+1)), max(answer[3], (xi+1))]
-    return answer
+    x = []
+    y = []
+    for i, row in enumerate(wallpaper):
+        for j, col in enumerate(row):
+            if col == '#':
+                x.append(i)
+                y.append(j)
+    return [min(x), min(y), max(x)+1, max(y)+1]
