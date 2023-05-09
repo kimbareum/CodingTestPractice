@@ -1,6 +1,7 @@
 def solution(n):
-    a = n
+    count1 = bin(n).count('1')
     while True:
-        a += 1
-        if bin(n).count('1') == bin(a).count('1'):
-            return a
+        n += 1
+        if bin(n).count('1') == count1:
+            
+            return n
