@@ -1,5 +1,7 @@
 def solution(n, left, right):
     answer = []
-    for i in range(left//n+1, right//n+2):
-        answer += [i if j <= i else j for j in range(1, n+1)]
-    return answer[left%n:(right//n-left//n)*n+right%n+1]
+    for row in range(left//n+1, right//n+2):
+        answer += [row if col <= row else col for col in range(1, n+1)]
+    new_left = left%n
+    new_right = (right//n-left//n)*n+right%n
+    return answer[new_left:new_right+1]
