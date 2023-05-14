@@ -7,8 +7,11 @@ def solution(str1, str2):
         return 65536
     count1 = Counter(multiset1)
     count2 = Counter(multiset2)
-    inter, union = 0, 0
-    for i in set(multiset1+multiset2):
-        inter += min(count1.get(i,0),count2.get(i,0))
-        union += max(count1.get(i,0),count2.get(i,0))
-    return int(inter/union*65536)
+    # inter, union = 0, 0
+    # for i in set(multiset1+multiset2):
+    #     inter += min(count1.get(i,0),count2.get(i,0))
+    #     union += max(count1.get(i,0),count2.get(i,0))
+    # return int(inter/union*65536)
+    
+    return int(sum((count1&count2).values())/sum((count1|count2).values()) * 65536)
+    # Counter도 합집합 교집합 연산인 가능함
