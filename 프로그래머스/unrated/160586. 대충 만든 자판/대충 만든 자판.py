@@ -3,19 +3,19 @@ def solution(keymap, targets):
     keymapDic = dict()
     answer = []
     for i in keymapSet:
-        temp = 101
+        min_press = 101
         for j in keymap:
-            temp2 = j.find(i)+1
-            if temp2 != 0 and temp2 < temp:
-                temp = temp2
-        keymapDic.update({i : temp})
+            key_press = j.find(i)+1
+            if key_press != 0 and key_press < min_press:
+                min_press = key_press
+        keymapDic.update({i : min_press})
     for i in targets:
         if set(i).issubset(keymapSet):
-            temp = 0
+            press = 0
             for j in i:
-                temp += keymapDic[j]
+                press += keymapDic[j]
         else:
-            temp = -1
-        answer.append(temp)
+            press = -1
+        answer.append(press)
                 
     return answer
