@@ -1,8 +1,15 @@
-import re
+from itertools import permutations
 
 def solution(babbling):
-    babble = ["aya", "ye", "woo", "ma"]
-    for i in range(len(babbling)):
-        babbling[i] = re.sub('(aya|ye|woo|ma)', '',babbling[i])
+    babbles = ["aya", "ye", "woo", "ma"]
+    babble_list = babbles[:]
+    answer = 0
     
-    return len([i for i in babbling if not i])
+    for i in range(2,len(babbles)+1):
+        babble_list += [''.join(permutation) for permutation in permutations(babbles,i)]
+        
+    for i in babbling:
+        if i in babble_list:
+            answer += 1
+        
+    return answer
