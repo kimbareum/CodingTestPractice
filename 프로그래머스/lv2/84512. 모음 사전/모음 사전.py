@@ -1,8 +1,8 @@
-from itertools import permutations
+from itertools import product
 
 def solution(word):
-    wordlist = set()
+    wordlist = []
     for i in range(1,6):
-        wordlist |= set([''.join(i) for i in permutations('AAAAAEEEEEEIIIIIOOOOOUUUUU',i)])
-    wordlist = sorted(list(wordlist))
+        wordlist += [''.join(i) for i in product('AEIOU', repeat=i)]
+    wordlist.sort()
     return wordlist.index(word)+1
