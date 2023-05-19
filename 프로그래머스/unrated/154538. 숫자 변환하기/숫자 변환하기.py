@@ -16,13 +16,15 @@ def solution(x, y, n):
                 answer[curr*2] = count
                 queue.append((curr*2, answer[curr*2]))
             else:
-                answer[curr*2] = min(count,answer[curr*2])
-                queue.append((curr*2, answer[curr*2]))
+                if answer[curr*2] > count:
+                    answer[curr*2] = count
+                    queue.append((curr*2, answer[curr*2]))
         if curr*3 <= y:
             if answer[curr*3] == 0:
                 answer[curr*3] = count
                 queue.append((curr*3, answer[curr*3]))
             else:
-                answer[curr*3] = min(count,answer[curr*3])
-                queue.append((curr*3, answer[curr*3]))
+                if answer[curr*3] > count:
+                    answer[curr*3] = min(count,answer[curr*3])
+                    queue.append((curr*3, answer[curr*3]))
     return answer[-1] if answer[-1] else -1
