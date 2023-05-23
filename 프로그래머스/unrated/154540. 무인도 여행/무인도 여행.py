@@ -6,13 +6,9 @@ def solution(maps):
     rows, cols = len(maps), len(maps[0])
     for row in range(rows):
         for col in range(cols):
-            # 'X' 가 아닌 위치 찾기
-            if maps[row][col] != 'X':
+            # 'X'가 아닌 위치 + 방문하지 않은 위치 찾기
+            if maps[row][col] != 'X' and (row, col) not in visited:
                 stack = [(row,col)]
-                # 이미 방문했다면 탐색하지않음
-                if stack[-1] in visited:
-                    stack.pop()
-                    continue
                 # 방문하지 않았다면 주변 탐색
                 temp = 0
                 while stack:
