@@ -1,4 +1,5 @@
 def solution(board):
+    # DP 문제
     answer = 0
     width, height = len(board[0]), len(board)
     lengths = [[0 for _ in range(width+1)] for i in range(height+1)]
