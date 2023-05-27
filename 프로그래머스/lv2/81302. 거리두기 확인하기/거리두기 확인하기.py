@@ -27,8 +27,9 @@ def solution(places):
                         if room[row1][col2] != 'X' or room[row2][col1] != 'X':
                             flag = 1
                     if flag == 1:
-                        answer.append(0)
                         break
         if flag == 0:
             answer.append(1)
+        else:
+            answer.append(0)
     return answer
