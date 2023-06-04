@@ -4,8 +4,7 @@ def solution(keyinput, board):
     width, height = board[0]//2, board[1]//2
     for key in keyinput:
         move = commands.get(key)
-        if (answer[0] + move[0] > width or answer[0] + move[0] < -width) or\
-        (answer[1] + move[1] > height or answer[1] + move[1] < -height):
+        if abs(answer[0] + move[0]) > width or abs(answer[1] + move[1]) > height:
             continue
         else :
             answer[0] += move[0]
